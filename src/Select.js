@@ -95,6 +95,7 @@ const Select = React.createClass({
 		valueKey: React.PropTypes.string,           // path of the label value in option objects
 		valueRenderer: React.PropTypes.func,        // valueRenderer: function (option) {}
 		wrapperStyle: React.PropTypes.object,       // optional style to apply to the component wrapper
+		summaryRenderer: React.PropTypes.func,      // custom renderer for the dropdown summary
 	},
 
 	statics: { Async },
@@ -960,6 +961,14 @@ const Select = React.createClass({
 		return null;
 	},
 
+	getSummary(options, valueArray, focusedOption) {
+		if (this.props.summaryRenderer) {
+			return this.props.summaryRenderer(options, valueArray, focusedOption);
+		}
+
+		return null;
+	},
+
 	renderOuter (options, valueArray, focusedOption) {
 		let menu = this.renderMenu(options, valueArray, focusedOption);
 		if (!menu) {
@@ -974,6 +983,7 @@ const Select = React.createClass({
 						 onMouseDown={this.handleMouseDownOnMenu}>
 					{menu}
 				</div>
+				{this.getSummary(options, valueArray, focusedOption)}
 			</div>
 		);
 	},
