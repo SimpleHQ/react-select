@@ -960,6 +960,14 @@ const Select = React.createClass({
 		return null;
 	},
 
+	getContainerContent(options, valueArray, focusedOption) {
+		if (this.props.containerContentRenderer) {
+			this.props.containerContentRenderer(options, valueArray, focusedOption);
+		}
+
+		return null;
+	},
+
 	renderOuter (options, valueArray, focusedOption) {
 		let menu = this.renderMenu(options, valueArray, focusedOption);
 		if (!menu) {
@@ -974,6 +982,7 @@ const Select = React.createClass({
 						 onMouseDown={this.handleMouseDownOnMenu}>
 					{menu}
 				</div>
+				{this.getContainerContent()}
 			</div>
 		);
 	},
