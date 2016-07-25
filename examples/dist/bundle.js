@@ -1455,7 +1455,7 @@ var Select = _react2['default'].createClass({
 
 	getSummary: function getSummary(options, valueArray, focusedOption) {
 		if (this.props.summaryRenderer) {
-			return this.props.summaryRenderer(options, valueArray, focusedOption);
+			return this.props.summaryRenderer(options, valueArray, focusedOption, this.state.inputValue);
 		}
 
 		return null;
