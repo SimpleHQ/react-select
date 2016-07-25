@@ -95,6 +95,8 @@ const Select = React.createClass({
 		valueKey: React.PropTypes.string,           // path of the label value in option objects
 		valueRenderer: React.PropTypes.func,        // valueRenderer: function (option) {}
 		wrapperStyle: React.PropTypes.object,       // optional style to apply to the component wrapper
+
+		containerContentRenderer: React.PropTypes.func, // renders content at the end of the menu container
 	},
 
 	statics: { Async },
