@@ -982,7 +982,7 @@ const Select = React.createClass({
 						 onMouseDown={this.handleMouseDownOnMenu}>
 					{menu}
 				</div>
-				{this.getContainerContent()}
+				{this.getContainerContent(options, valueArray, focusedOption)}
 			</div>
 		);
 	},

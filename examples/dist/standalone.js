@@ -1362,7 +1362,7 @@ var Select = _react2['default'].createClass({
 					onMouseDown: this.handleMouseDownOnMenu },
 				menu
 			),
-			this.getContainerContent()
+			this.getContainerContent(options, valueArray, focusedOption)
 		);
 	},
 
