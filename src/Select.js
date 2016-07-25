@@ -964,7 +964,7 @@ const Select = React.createClass({
 
 	getContainerContent(options, valueArray, focusedOption) {
 		if (this.props.containerContentRenderer) {
-			this.props.containerContentRenderer(options, valueArray, focusedOption);
+			return this.props.containerContentRenderer(options, valueArray, focusedOption);
 		}
 
 		return null;

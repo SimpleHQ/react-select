@@ -1456,7 +1456,7 @@ var Select = _react2['default'].createClass({
 
 	getContainerContent: function getContainerContent(options, valueArray, focusedOption) {
 		if (this.props.containerContentRenderer) {
-			this.props.containerContentRenderer(options, valueArray, focusedOption);
+			return this.props.containerContentRenderer(options, valueArray, focusedOption);
 		}
 
 		return null;
