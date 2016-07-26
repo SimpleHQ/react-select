@@ -1454,11 +1454,11 @@ var Select = _react2['default'].createClass({
 	},
 
 	getSummary: function getSummary(options, valueArray, focusedOption) {
-		if (this.props.summaryRenderer) {
-			return this.props.summaryRenderer(options, valueArray, focusedOption, this.state.inputValue);
+		if (this.props.isLoading || !this.props.summaryRenderer) {
+			return null;
 		}
 
-		return null;
+		return this.props.summaryRenderer(options, valueArray, focusedOption, this.state.inputValue);
 	},
 
 	renderOuter: function renderOuter(options, valueArray, focusedOption) {

@@ -962,11 +962,11 @@ const Select = React.createClass({
 	},
 
 	getSummary(options, valueArray, focusedOption) {
-		if (this.props.summaryRenderer) {
-			return this.props.summaryRenderer(options, valueArray, focusedOption, this.state.inputValue);
+		if (this.props.isLoading || !this.props.summaryRenderer) {
+			return null;
 		}
 
-		return null;
+		return this.props.summaryRenderer(options, valueArray, focusedOption, this.state.inputValue);
 	},
 
 	renderOuter (options, valueArray, focusedOption) {
